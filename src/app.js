@@ -52,7 +52,7 @@ app.patch("/update_book/:id", async (req, res) => {
         const id = req.params.id;
         const { title, author, publishYear, price, description } = req.body;
 
-        await bookModel.findoneAndUpdate(
+        await bookModel.findOneAndUpdate(
             { _id: id }, 
             { title:title, author:author, publishYear:publishYear, price:price, description:description }
         );
